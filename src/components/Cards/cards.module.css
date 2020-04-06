@@ -1,0 +1,27 @@
+.container {
+  margin: 50px 0;
+}
+
+.card {
+  margin: 0 2% !important;
+  padding-right: 10px;
+  align-items: center;
+}
+
+.confirmed{
+  border-bottom: 5px solid rgb(204,0,0);
+}
+
+.recovered {
+  border-bottom: 5px solid rgb(51,174,139);
+}
+
+.deaths {
+  border-bottom: 5px solid rgb(37,37,37);
+}
+
+@media(max-width: 770px) {
+  .card {
+    margin: 2% 0 !important;
+  }
+}
