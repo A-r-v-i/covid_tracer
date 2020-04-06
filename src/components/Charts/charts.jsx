@@ -6,7 +6,7 @@ import styles from "./charts.module.css";
 
 const Charts = ({ data: { confirmed, recovered, deaths }, country }) => {
   const [dailyData, setDailyData] = useState({});
-  console.log(confirmed)
+  //console.log(confirmed);
 
   useEffect(() => {
     const fetchDataAPI = async () => {
@@ -22,7 +22,7 @@ const Charts = ({ data: { confirmed, recovered, deaths }, country }) => {
         labels: ["Infected", "Recovered", "Deaths"],
         datasets: [
           {
-            label: `People`,
+            label: "People",
             backgroundColor: [
               "rgb(204,0,0)",
               "rgb(51,174,139)",
@@ -45,13 +45,13 @@ const Charts = ({ data: { confirmed, recovered, deaths }, country }) => {
         labels: dailyData.map(({ date }) => date),
         datasets: [
           {
-            data: dailyData.map(({ confirmed }) => confirmed),
+            data: dailyData.map((data) => data.confirmed),
             label: "Infected",
             borderColor: "#cc0000",
             fill: true,
           },
           {
-            data: dailyData.map(({ deaths }) => deaths),
+            data: dailyData.map((data) => data.deaths),
             label: "Deaths",
             borderColor: "#252525",
             backgroundColor: "##363636",
@@ -63,7 +63,7 @@ const Charts = ({ data: { confirmed, recovered, deaths }, country }) => {
   ) : null;
   return (
     <div className={styles.container}>
-      {country ? { lineChart } : { barChart }}
+      {country ? barChart :  lineChart }
     </div>
   );
 };
