@@ -1,13 +1,13 @@
 import React from "react";
-import { Doughnut, Bar } from "react-chartjs-2";
+import { Doughnut } from "react-chartjs-2";
 import styles from "./statespicker.module.css";
 
 const MainCharts = ({
   data: { active, confirmed, deaths, recovered },
   stateData,
 }) => {
-  console.log(active, confirmed, deaths, recovered);
-  console.log(stateData);
+  // console.log(active, confirmed, deaths, recovered);
+  // console.log(stateData);
 
   //for showing INDIA'S total cases
   const doughnut = (

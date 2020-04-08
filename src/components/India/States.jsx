@@ -2,14 +2,13 @@ import React, { Component } from "react";
 import {
   fetchIndiaData,
   fetchStateDistrictData,
-  fetchStateList,
   fetchStateData,
 } from "../util/data";
-import CountUp from "react-countup";
 import StatesPicker from "./StatesPicker";
 import MainCharts from './MainCharts';
 import StateCharts from './StateCharts';
 import styles from "./statespicker.module.css";
+import DistrictData from "./DistrictData";
 
 
 export default class States extends Component {
@@ -24,7 +23,8 @@ export default class States extends Component {
       state: null,
       stateData: null,
       stateTotalCases: 0,
-      districtsData: [],
+      districtData: [],
+      showDistrictData: false
     };
   }
 
@@ -32,9 +32,9 @@ export default class States extends Component {
     const {
       data: { statewise },
     } = await fetchIndiaData();
-    console.log(statewise);
-    const x = statewise.find((state) => {return state.state === "Tamil Nadu"})
-    console.log(x)
+    //console.log(statewise);
+    //const x = statewise.find((state) => {return state.state === "Tamil Nadu"})
+    //console.log(x)
     const { active, confirmed, deaths, recovered ,lastupdatedtime } = statewise.shift();
     const updatedTimePeriod = new Date(lastupdatedtime).toDateString();
     this.setState({ 
@@ -46,10 +46,11 @@ export default class States extends Component {
   }
 
   handleStateChange = async (state) => {
-    let stateTotalCases = 0;
     const data = await fetchStateData(state);
-    console.log(stateTotalCases);
-    this.setState({stateData: data});
+    const districtData = await fetchStateDistrictData(state);
+    //console.log(districtData)
+    
+    this.setState({stateData: data, districtData: districtData, showDistrictData: true});
   };
 
   render() {
@@ -57,17 +58,16 @@ export default class States extends Component {
           confirmed = this.state._confirmedIndia,
           deaths = this.state._deathsIndia,
           recovered = this.state._recoveredIndia,
-          state = this.state.state,
-          stateData = this.state.stateData;
-    
+          stateData = this.state.stateData,
+          districtData = this.state.districtData;
     const data = {active, confirmed, deaths, recovered};
 
-    const endValue = this.state.state ? this.state.stateTotalCases : null;
     return (
       <div className={styles.container}>
         <MainCharts data = {data} />
         <StatesPicker handleStateChange={this.handleStateChange} />
         <StateCharts stateData={stateData} />
+        {districtData ? <DistrictData data={districtData} show={this.state.showDistrictData} /> : null}
       </div>
     );
   }

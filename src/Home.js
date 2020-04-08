@@ -27,7 +27,7 @@ export default class Home extends Component {
 
   render() {
     const { data, country } = this.state;
-    console.log(data, country);
+    //console.log(data, country);
     return (
       <div className={styles.container}>
         <Cards data={data} />

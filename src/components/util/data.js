@@ -56,7 +56,7 @@ export const fetchCountriesList = async() => {
 export const fetchIndiaData = async() => {
   try {
     const data = await axios.get(covidUrl);
-    console.log(data);
+    //console.log(data);
     return data;
   }
   catch(err) {
@@ -81,7 +81,7 @@ export const fetchStateData = async(state) => {
 export const fetchStateList = async() => {
   try {
     const {data} = await axios.get(covidStateUrl);
-    console.log(data);
+    //console.log(data);
     // const stateName = data.filter((_state) => {
     //   console.log(_state.state);
     //   return _state.state
@@ -97,7 +97,7 @@ export const fetchStateDistrictData = async(state) => {
   try{
     const {data} = await axios.get(covidStateUrl);
     const [stateData] = data.filter((_data) => _data.state === state);
-    //console.log(districtData.districtData);
+    //console.log(stateData.districtData);
     return stateData.districtData;
   }
   catch(err) {

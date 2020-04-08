@@ -14,7 +14,7 @@ const About = () => {
       <h3>Since the API datas are unofficial from various developers around the world, <br />
       so there is slight variations in the data. Forgive us for that.</h3>
 
-      <code>All districts datas in India is on under process, will update in a day.</code>
+      <code>All States and Districts data updated now. You can check that in "India Data"</code>
       <h4>Thank you.</h4>
 
       <code><strong>#stay_home | #stay_safe </strong></code>
