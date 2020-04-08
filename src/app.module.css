@@ -14,9 +14,30 @@ body {
   margin-top: 50px;
 }
 
+.navbar {
+  position: absolute;
+  top: 0;
+  background-color: rgb(66,165,189);
+  color: black;
+  border-bottom: 2%;
+  width: 100%;
+}
+.navbar li {
+  list-style: none;
+  display: flex;
+  justify-content: space-evenly;
+  font-size: 15px;
+  font-family: monospace;
+  color: 'black';
+}
+
+.navbar li a {
+  text-decoration: none;
+}
+
 @media (max-width: 770px) {
   .container {
-    margin: 0 10%;
+    margin: 10% 10%;
   }
 
   .image {

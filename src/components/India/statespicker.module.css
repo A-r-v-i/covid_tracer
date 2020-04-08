@@ -1,0 +1,51 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 85%;
+}
+
+.chartContainer {
+  display: flex;
+  justify-content: center;
+  width: 95%;
+  /* height: 30%; */
+  top: 200px;
+}
+
+.formControl {
+  width: 70%;
+  margin-bottom: 30px !important;
+  top: 20px;
+}
+
+
+.stateChartContainer {
+  display: flex; 
+  flex-direction: column;
+  width: 85%;
+  justify-content: center;
+  margin: 50px 0;
+}
+
+.stateDetails {
+  font-size: 15px;
+  font-family: monospace;
+}
+
+
+@media(max-width: 770px) {
+  .formControl{
+    width: 80%;
+  }
+  .stateChartContainer {
+    width: 100%;
+  }
+}
+
+@media(min-width: 768px) {
+  .formControl{ 
+    width: 80%;
+  }
+}

@@ -1,9 +1,11 @@
 .infoHeader {
   position: fixed;
-  top: 0;
+  bottom: 0;
   background-color: rgb(66,165,189);
   color: black;
   border-bottom: 2%;
   width: 100%;
   text-align: center;
+  padding: 0;
+  margin: 0;
 }
