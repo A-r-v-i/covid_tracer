@@ -67,7 +67,7 @@ export const fetchIndiaData = async() => {
 export const fetchStateData = async(state) => {
   try {
     const {data: {statewise}} = await axios.get(covidUrl);
-    //console.log(data);
+    //console.log(statewise);
     const stateData = statewise.find((_state) => {
       return _state.state === state
     })

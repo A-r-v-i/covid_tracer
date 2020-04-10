@@ -8,10 +8,7 @@ const StateCharts = ({ stateData }) => {
 
   const details = stateData ? (
     <>
-      <h5>
-        Total active cases in {stateData.state}:{stateData.active}
-      </h5>
-      <code>Last Updated on: {stateData.lastupdatedtime}</code>
+      <h5>Last Updated on: {stateData.lastupdatedtime}</h5>
     </>
   ) : null;
   //to display state datas
