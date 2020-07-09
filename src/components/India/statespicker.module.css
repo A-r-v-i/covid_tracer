@@ -34,6 +34,16 @@
   font-family: monospace;
 }
 
+.district__data {
+  text-align: center;
+  width: max-content;
+}
+.tableContainer {
+  width: auto;
+  text-align: end;
+  display: block;
+}
+
 .district {
   font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
   border-collapse: collapse;

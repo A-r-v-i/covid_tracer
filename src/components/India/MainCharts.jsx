@@ -1,24 +1,14 @@
 import React from "react";
 import { Doughnut } from "react-chartjs-2";
+import Loader from "../Reusable/Loader";
 import styles from "./statespicker.module.css";
 
-const MainCharts = ({
-  data: { active, confirmed, deaths, recovered },
-  stateData,
-}) => {
-  // console.log(active, confirmed, deaths, recovered);
-  // console.log(stateData);
-
+const MainCharts = ({ data: { active, confirmed, deaths, recovered } }) => {
   //for showing INDIA'S total cases
   const doughnut = (
     <Doughnut
       data={{
-        labels: [
-          `Active`,
-          `Confimred`,
-          `Deaths`,
-          `Recovered`,
-        ],
+        labels: [`Active`, `Confimred`, `Deaths`, `Recovered`],
         datasets: [
           {
             label: "CoVid_India",
@@ -38,6 +28,10 @@ const MainCharts = ({
           text: `Total Cases in India: ${confirmed}`,
           fontSize: 15,
         },
+        width: "400",
+        height: "400",
+        responsive: true,
+        maintainAspectRatio: true,
         legend: {
           display: true,
           position: "right",
@@ -48,7 +42,7 @@ const MainCharts = ({
 
   return (
     <div className={styles.chartContainer}>
-      <div className={styles.indiaChart}>{active ? doughnut : null}</div>
+      <div className={styles.indiaChart}>{active ? doughnut : <Loader />}</div>
     </div>
   );
 };

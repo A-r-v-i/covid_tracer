@@ -1,0 +1,42 @@
+.navbar {
+  position: fixed;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  top: 0;
+  background: #fffdec;
+  color: rgb(146, 0, 122);
+  border-bottom: 2px solid black;
+  z-index: 111;
+}
+
+.nav {
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+  left: 15px;
+}
+
+.nav-item a {
+  color: rgb(163, 9, 112);
+  font-weight: bold;
+  font-size: 20px;
+}
+
+/* .logo {
+  height: 30px;
+  width: 60px;
+} */
+
+.main_logo {
+  animation: spin 6s linear infinite;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}

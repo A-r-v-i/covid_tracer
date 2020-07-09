@@ -1,4 +1,32 @@
+@import url("https://fonts.googleapis.com/css2?family=DM+Mono:wght@300&display=swap");
+
+.about_wrapper {
+  display: block;
+}
+
 .about {
-  font-family: monospace;
+  width: 70vw;
+  font-family: "DM Mono", monospace;
   color: grey;
+  position: relative;
+  display: inline-block;
+  top: 30px;
+  margin: 2rem 2rem;
+}
+
+.love {
+  font-size: 30px;
+  animation: love 4s linear infinite;
+}
+
+@keyframes love {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.2);
+  }
+  100% {
+    transform: scale(1);
+  }
 }
