@@ -40,7 +40,7 @@ const Cards = ({ data: { confirmed, recovered, deaths, lastUpdate } }) => {
             <Typography variant="body2">
               Total confirmed cases for COVID-19
             </Typography>
-            <img class={styles.card_icon} src="https://img.icons8.com/plasticine/60/000000/hospital-room.png" alt="confirmed"  />
+            <img className={styles.card_icon} src="https://img.icons8.com/plasticine/60/000000/hospital-room.png" alt="confirmed"  />
           </CardContent>
         </Grid>
         <Grid
@@ -61,7 +61,7 @@ const Cards = ({ data: { confirmed, recovered, deaths, lastUpdate } }) => {
             <Typography variant="body2">
               Total recovered lives for COVID-19
             </Typography>
-            <img class={styles.card_icon} src="https://img.icons8.com/doodle/60/000000/man-with-flower.png" alt="recovered" />
+            <img className={styles.card_icon} src="https://img.icons8.com/doodle/60/000000/man-with-flower.png" alt="recovered" />
           </CardContent>
         </Grid>
         <Grid
@@ -82,7 +82,7 @@ const Cards = ({ data: { confirmed, recovered, deaths, lastUpdate } }) => {
             <Typography variant="body2">
               Total no. of deaths for COVID-19
             </Typography>
-            <img class={styles.card_icon} src="https://img.icons8.com/color/60/000000/death.png" alt="died" />
+            <img className={styles.card_icon} src="https://img.icons8.com/color/60/000000/death.png" alt="died" />
           </CardContent>
         </Grid>
       </Grid>

@@ -6,7 +6,6 @@ import styles from "./charts.module.css";
 
 const Charts = ({ data: { confirmed, recovered, deaths }, country }) => {
   const [dailyData, setDailyData] = useState({});
-  //console.log(dailyData);
 
   useEffect(() => {
     const fetchDataAPI = async () => {
@@ -62,7 +61,17 @@ const Charts = ({ data: { confirmed, recovered, deaths }, country }) => {
     />
   ) : null;
   return (
-    <div className={styles.container}>{country ? barChart : lineChart}</div>
+    <div className={styles.container}>
+      <span className={styles.countryIcon}>
+        {country ? (
+          <img
+            src={`https://www.countryflags.io/${country}/flat/64.png`}
+            alt="countryIcon"
+          />
+        ) : <img className={styles.globe} src="https://img.icons8.com/fluent/64/000000/globe.png" alt="globe" />}
+      </span>
+      {country ? barChart : lineChart}
+    </div>
   );
 };
 export default Charts;

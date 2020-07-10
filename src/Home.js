@@ -20,7 +20,7 @@ export default class Home extends Component {
   handleCountryChange = async (country) => {
     const data = await fetchData(country);
     this.setState({ data, country: country });
-    console.log(data);
+    console.log(country);
   };
   loader=()=> {
     const { data, country } = this.state;

@@ -6,7 +6,6 @@ import styles from "./countrypicker.module.css";
 
 const CountryPicker = ({ handleCountryChange }) => {
   const [fetchedCountries, setFetchedCountries] = useState([]);
-  const [countryCode, setCountryCode] = useState(null);
 
   useEffect(() => {
     const fetchCountries = async () => {
@@ -18,20 +17,10 @@ const CountryPicker = ({ handleCountryChange }) => {
     fetchCountries();
   }, [setFetchedCountries]);
 
-  const renderFlag=(code) => {
-    return (
-      <img
-          src={`https://www.countryflags.io/${code}/flat/64.png`}
-          alt="code"
-        />
-    )
-  }
-
   const countryOptionList = (fetchedCountries) => {
     return fetchedCountries.map((country, i) => (
-      <option key={i} value={country[0]}>
+      <option key={i} value={country[1]}>
         {country[0]}
-        {renderFlag(country[1])}
       </option>
     ));
   };
@@ -41,7 +30,9 @@ const CountryPicker = ({ handleCountryChange }) => {
       <FormControl className={styles.formControl}>
         <NativeSelect
           defaultValue=""
-          onChange={(e) => handleCountryChange(e.target.value)}
+          onChange={(e) => {
+            handleCountryChange(e.target.value);
+          }}
         >
           <option value="">Global</option>
           {countryOptionList(fetchedCountries)}

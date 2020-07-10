@@ -11,11 +11,14 @@ body {
 }
 
 .main_container {
-  margin: 3rem 1rem;
+  margin: 5rem 2rem;
+}
+
+.main_img_container {
+  text-align: center;
 }
 
 .image {
-  width: 370px;
   margin-top: 5%;
 }
 /* 

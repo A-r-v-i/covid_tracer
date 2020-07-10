@@ -25,14 +25,17 @@ const Example = (props) => {
       </NavbarBrand>
       <NavbarToggler onClick={toggleNavbar} />
       <Collapse isOpen={isOpen} navbar>
-        <Nav navbar className="ml-auto nav col-md-8">
-          <NavItem className="nav-item">
+        <Nav navbar className="ml-auto nav col-md-12">
+          <NavItem onClick={toggleNavbar} className="nav-item">
             <Link to="/">Global Data</Link>
           </NavItem>
-          <NavItem>
+          <NavItem onClick={toggleNavbar} className="nav-item">
             <Link to="/states">India Data</Link>
           </NavItem>
-          <NavItem>
+          <NavItem onClick={toggleNavbar} className="nav-item">
+            <Link to="/precaution">Precaution</Link>
+          </NavItem>
+          <NavItem onClick={toggleNavbar} className="nav-item">
             <Link to="/about">About</Link>
           </NavItem>
         </Nav>

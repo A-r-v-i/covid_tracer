@@ -23,11 +23,6 @@
   font-size: 20px;
 }
 
-/* .logo {
-  height: 30px;
-  width: 60px;
-} */
-
 .main_logo {
   animation: spin 6s linear infinite;
 }
