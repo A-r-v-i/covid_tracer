@@ -32,7 +32,7 @@ export default class States extends Component {
     const {
       data: { statewise },
     } = await fetchIndiaData();
-    //console.log(statewise);
+    console.log(statewise);
     //const x = statewise.find((state) => {return state.state === "Tamil Nadu"})
     //console.log(x)
     const { active, confirmed, deaths, recovered ,lastupdatedtime } = statewise.shift();

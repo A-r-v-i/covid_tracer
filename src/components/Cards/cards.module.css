@@ -1,5 +1,5 @@
 .container {
-  margin: 50px 0;
+  margin: 50px;
 }
 
 .card {
@@ -7,6 +7,7 @@
   padding-right: 10px;
   align-items: center;
 }
+
 
 .confirmed{
   border-bottom: 5px solid rgb(204,0,0);
@@ -20,8 +21,16 @@
   border-bottom: 5px solid rgb(37,37,37);
 }
 
-@media(max-width: 770px) {
+@media(max-width: 960px) {
+  .container {
+    margin: 50px 0;
+  }
   .card {
     margin: 2% 0 !important;
+  }
+  .card_icon {
+    position: relative;
+    float: right;
+    bottom: 90px;
   }
 }

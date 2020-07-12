@@ -1,4 +1,5 @@
 import React from "react";
+import { Table } from "reactstrap";
 import styles from "./statespicker.module.css";
 
 const DistrictData = ({ data, show }) => {
@@ -11,10 +12,10 @@ const DistrictData = ({ data, show }) => {
     temp = tot.confirmed + temp;
     return temp;
   });
-  const totConfirmed = total[total.length-1];
+  const totConfirmed = total[total.length - 1];
   const table = show ? (
-    <div className={styles.table}>
-      <table className={styles.district}>
+    <div className={styles.tableContainer}>
+      <Table hover className={styles.table}>
         <thead>
           <tr>
             <th>District</th>
@@ -31,16 +32,14 @@ const DistrictData = ({ data, show }) => {
             );
           })}
         </tbody>
-      </table>
+      </Table>
     </div>
   ) : null;
   return (
-  <div>
-  {totConfirmed ? 
-  (<h5>
-    Total active cases in :{totConfirmed}
-  </h5>) : null}
-  {data ? table : null}</div>
+    <div className={styles.district__data}>
+      {totConfirmed ? <h5>Total active cases in :{totConfirmed}</h5> : null}
+      {data ? table : null}
+    </div>
   );
 };
 
