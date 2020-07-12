@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { Cards, Charts, CountryPicker } from "./components";
 import { fetchData } from "./components/util/data";
-import Loader from './components/Reusable/Loader';
+import Loader from "./components/Reusable/Loader";
 import styles from "./app.module.css";
 
 export default class Home extends Component {
@@ -20,11 +20,10 @@ export default class Home extends Component {
   handleCountryChange = async (country) => {
     const data = await fetchData(country);
     this.setState({ data, country: country });
-    console.log(country);
   };
-  loader=()=> {
+  loader = () => {
     const { data, country } = this.state;
-    if (this.state.data !== '') {
+    if (this.state.data !== "") {
       return (
         <>
           <Cards data={data} />
@@ -35,7 +34,7 @@ export default class Home extends Component {
     } else {
       return <Loader />;
     }
-  }
+  };
   render() {
     return <div className={styles.container}>{this.loader()}</div>;
   }
