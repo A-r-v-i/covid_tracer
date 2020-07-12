@@ -42,7 +42,51 @@
 }
 
 .warningIcon img {
-  animation: warning 5s linear infinite;
+  animation: love 5s linear infinite;
+}
+
+.symbolic {
+  margin: 20px auto;
+}
+
+.symbolicContainer {
+  margin: 0;
+  padding: 0;
+}
+
+.row {
+  display: flex;
+  justify-content: center;
+}
+
+.col {
+  height: 100px;
+  width: 100px;
+  margin: 5px 5px 5px 0;
+  background-color: seashell;
+  box-shadow: silver 2px 2px 10px;
+  border-radius: 5%;
+}
+
+.col:hover {
+  animation: zoomie 4s linear;
+}
+
+.quotes {
+  height: max-content;
+  text-align: center;
+}
+
+@keyframes zoomie {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
 }
 
 @keyframes love {
@@ -57,25 +101,23 @@
   }
 }
 
-@keyframes warning {
-  0% {
-    transform: scale(1);
-  }
-  50% {
-    transform: scale(1.2);
-  }
-  100% {
-    transform: scale(1);
-  }
-}
-
-
 @media (max-width: 399px) {
-  *{
-    margin-left:0;
-    margin-right: 0; 
+  * {
+    margin-left: 0;
+    margin-right: 0;
   }
+
   .precautionContainer {
     margin: 0;
+  }
+  .precautionList {
+    width: auto;
+    float: left;
+  }
+  .precautionList li {
+    margin-bottom: 10px;
+    border-bottom: 2px solid crimson;
+    border-bottom-left-radius: 3px;
+    border-bottom-right-radius: 3px;
   }
 }
